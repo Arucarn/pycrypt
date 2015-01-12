@@ -47,10 +47,9 @@ class Ceaser(object):
             
             self.shift(key[i])
             decrypted_text.append(self.alphabet[self.new_alphabet.index(
-                cypher[i])])
+                cypher[i - 1])])
             
         return "".join(decrypted_text)
-        
         
         
         
