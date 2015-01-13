@@ -29,12 +29,11 @@ class Ceaser(object):
     
     def encrypt(self, text):
         
-        key = []
+        key = self.shift(randint(0, 26))
         encrypted_text = []
         
         for c in text:
             
-            key.append(self.shift(randint(0, 26)))
             encrypted_text.append(self.new_alphabet[self.alphabet.index(c)])
         
         return "".join(encrypted_text), key
