@@ -7,6 +7,9 @@ class Ceaser(object):
     
     def shift(self, offset):
         
+        """Shifts the alphabet using a random number.
+           Returns the value of the shift."""
+        
         self.alphabet = [
             'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
             'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
@@ -23,21 +26,28 @@ class Ceaser(object):
 
         for i in range(int(offset)):
             
+            # Takes first index and appends it to the end.
+            
             self.new_alphabet.append(self.new_alphabet.pop(0))
             
         return offset
     
     def encrypt(self, text):
         
-        key = []
+        """The function takes an input then
+           then returns the encrypted output and
+           key."""
+        
+        key = self.shift(randint(0, 26))
         encrypted_text = []
         
         for c in text:
             
-            key.append(self.shift(randint(0, 26)))
+            # Takes letter input then appends the output to a list.
+            
             encrypted_text.append(self.new_alphabet[self.alphabet.index(c)])
         
-        return "".join(encrypted_text), key
+        return "".join(encrypted_text), key # Returns the encrypted text and the key.
     
     def decrypt(self, cypher, key):
         
