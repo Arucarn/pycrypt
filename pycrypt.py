@@ -35,8 +35,7 @@ class Ceaser(object):
     def encrypt(self, text):
         
         """The function takes an input then
-           then returns the encrypted output and
-           key."""
+           then returns the encrypted output and key."""
         
         key = self.shift(randint(0, 26))
         encrypted_text = []
@@ -51,11 +50,16 @@ class Ceaser(object):
     
     def decrypt(self, cypher, key):
         
+        """This function takes the encrypted text and key then returns
+           the original text."""
+
         decrypted_text = []
         
         for i in range(len(key)):
             
-            self.shift(key[i])
+            self.shift(key[i]) # Shift alphabet using value from key.
+            
+            # Takes encrypted letter and returns original letter.
             decrypted_text.append(self.alphabet[self.new_alphabet.index(
                 cypher[i - 1])])
             
@@ -64,6 +68,10 @@ class Ceaser(object):
     
 class Nceaser(object):
     
+    """This encryption method is like the Ceaser Cypher however does a
+       different alphabet shift for each letter. This results in a more
+       secure encryption method, however the key is longer."""
+
     def shift(self, offset):
         
         self.alphabet = [
@@ -88,11 +96,16 @@ class Nceaser(object):
     
     def encrypt(self, text):
         
+        """Does exactly the same as the Ceaser method but uses a
+           different key for each letter."""
+
         key = []
         encrypted_text = []
         
         for c in text:
             
+            # Shifts alphabet for each letter and generates key + text
+
             key.append(self.shift(randint(0, 26)))
             encrypted_text.append(self.new_alphabet[self.alphabet.index(c)])
         
@@ -100,6 +113,7 @@ class Nceaser(object):
     
     def decrypt(self, cypher, key):
         
+        # Decrypted each letter in text.
         decrypted_text = []
         
         for i in range(len(key)):
