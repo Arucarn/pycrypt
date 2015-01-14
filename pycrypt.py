@@ -1,4 +1,4 @@
-f#! /usr/bin/env python3
+#! /usr/bin/env python3
 
 from random import randint
 
@@ -13,14 +13,14 @@ class Caesar(object):
         self.alphabet = [
             'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
             'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
-            'w', 'x', 'y', 'z', ' ', '.', ',', '!', '?', '', '\'',
+            'w', 'x', 'y', 'z', ' ', '.', ',', '!', '?', '\'',
             '-', '*', '\n'
             ]
 
         self.new_alphabet = [
             'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
             'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
-            'w', 'x', 'y', 'z', ' ', '.', ',', '!', '?', '', '\'',
+            'w', 'x', 'y', 'z', ' ', '.', ',', '!', '?', '\'',
             '-', '*', '\n'
             ]
 
@@ -29,8 +29,7 @@ class Caesar(object):
             # Takes first index and appends it to the end.
             
             self.new_alphabet.append(self.new_alphabet.pop(0))
-        #print(self.alphabet)
-        #print(self.new_alphabet)    
+   
         return offset
     
     def encrypt(self, text):
@@ -38,7 +37,7 @@ class Caesar(object):
         """The function takes an input then
            then returns the encrypted output and key."""
         
-        #text = text.lower()
+        text = text.lower()
 
         key = self.shift(randint(0, 26))
         encrypted_text = []
@@ -80,14 +79,14 @@ class Ncaesar(object):
         self.alphabet = [
             'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
             'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
-            'w', 'x', 'y', 'z', ' ', '.', ',', '!', '?', '', '\'',
+            'w', 'x', 'y', 'z', ' ', '.', ',', '!', '?', '\'',
             '-', '*', '\n'
             ]
 
         self.new_alphabet = [
             'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
             'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
-            'w', 'x', 'y', 'z', ' ', '.', ',', '!', '?', '', '\'',
+            'w', 'x', 'y', 'z', ' ', '.', ',', '!', '?', '\'',
             '-', '*', '\n'
             ]
 
@@ -99,15 +98,13 @@ class Ncaesar(object):
     
     def encrypt(self, text):
         
-<<<<<<< HEAD
         """Does exactly the same as the Ceaser method but uses a
            different key for each letter."""
-        #text = text.lower()
-=======
+        text = text.lower()
+
         """Does exactly the same as the Caeser encrypt method but 
            uses a different key for each letter."""
 
->>>>>>> refs/remotes/origin/master
         key = []
         encrypted_text = []
         
@@ -130,6 +127,7 @@ class Ncaesar(object):
             self.shift(key[i])
             decrypted_text.append(self.alphabet[self.new_alphabet.index(
                 cypher[i])])
+            print(i)
             
         return "".join(decrypted_text)
         
