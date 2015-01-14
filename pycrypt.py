@@ -1,4 +1,4 @@
-#! /usr/bin/env python3
+f#! /usr/bin/env python3
 
 from random import randint
 
@@ -69,9 +69,9 @@ class Caesar(object):
         return "".join(decrypted_text)
         
     
-class Nceaser(object):
+class Ncaesar(object):
     
-    """This encryption method is like the Ceaser Cypher however does a
+    """This encryption method is like the Caesar Cypher however it does a
        different alphabet shift for each letter. This results in a more
        secure encryption method, however the key is longer."""
 
@@ -99,9 +99,15 @@ class Nceaser(object):
     
     def encrypt(self, text):
         
+<<<<<<< HEAD
         """Does exactly the same as the Ceaser method but uses a
            different key for each letter."""
         #text = text.lower()
+=======
+        """Does exactly the same as the Caeser encrypt method but 
+           uses a different key for each letter."""
+
+>>>>>>> refs/remotes/origin/master
         key = []
         encrypted_text = []
         
