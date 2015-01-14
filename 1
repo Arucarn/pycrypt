@@ -29,8 +29,7 @@ class Caesar(object):
             # Takes first index and appends it to the end.
             
             self.new_alphabet.append(self.new_alphabet.pop(0))
-        #print(self.alphabet)
-        #print(self.new_alphabet)    
+            
         return offset
     
     def encrypt(self, text):
@@ -38,7 +37,7 @@ class Caesar(object):
         """The function takes an input then
            then returns the encrypted output and key."""
         
-        #text = text.lower()
+        text = text.lower()
 
         key = self.shift(randint(0, 26))
         encrypted_text = []
@@ -57,14 +56,14 @@ class Caesar(object):
            the original text."""
 
         decrypted_text = []
-        self.shift(key) # Shift alphabet using value from key.
         
         for i in range(len(cypher)):
             
+            self.shift(key[i]) # Shift alphabet using value from key.
             
             # Takes encrypted letter and returns original letter.
             decrypted_text.append(self.alphabet[self.new_alphabet.index(
-                cypher[i])])
+                cypher[i - 1])])
             
         return "".join(decrypted_text)
         
@@ -101,7 +100,7 @@ class Nceaser(object):
         
         """Does exactly the same as the Ceaser method but uses a
            different key for each letter."""
-        #text = text.lower()
+        text = text.lower()
         key = []
         encrypted_text = []
         
