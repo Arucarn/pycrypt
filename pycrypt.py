@@ -22,11 +22,11 @@ class Caesar(object):
             'w', 'x', 'y', 'z'
             ]
 
-        for i in range(int(offset)):
+        for i in range(26 - int(offset)):
             
             # Takes first index and appends it to the end.
             
-            self.new_alphabet.insert(-1, self.new_alphabet.pop(0))
+            self.new_alphabet.insert(0, self.new_alphabet.pop(-1))
    
         return offset
     
