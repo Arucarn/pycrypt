@@ -11,35 +11,33 @@ class Caesar(object):
            Returns the value of the shift."""
         
         self.alphabet = [
-            'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
+            'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',        
             'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
-            'w', 'x', 'y', 'z', ' ', '.', ',', '!', '?', '\'',
-            '-', '*', '\n'
+            'w', 'x', 'y', 'z'
             ]
 
         self.new_alphabet = [
             'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
             'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
-            'w', 'x', 'y', 'z', ' ', '.', ',', '!', '?', '\'',
-            '-', '*', '\n'
+            'w', 'x', 'y', 'z'
             ]
 
         for i in range(int(offset)):
             
             # Takes first index and appends it to the end.
             
-            self.new_alphabet.append(self.new_alphabet.pop(0))
+            self.new_alphabet.insert(-1, self.new_alphabet.pop(0))
    
         return offset
     
-    def encrypt(self, text):
+    def encrypt(self, text, key):
         
         """The function takes an input then
            then returns the encrypted output and key."""
         
         text = text.lower()
 
-        key = self.shift(randint(0, 26))
+        key = self.shift(key)
         encrypted_text = []
         
         for c in text:
@@ -79,20 +77,18 @@ class Ncaesar(object):
         self.alphabet = [
             'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
             'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
-            'w', 'x', 'y', 'z', ' ', '.', ',', '!', '?', '\'',
-            '-', '*', '\n'
+            'w', 'x', 'y', 'z'
             ]
 
         self.new_alphabet = [
             'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
             'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
-            'w', 'x', 'y', 'z', ' ', '.', ',', '!', '?', '\'',
-            '-', '*', '\n'
+            'w', 'x', 'y', 'z'
             ]
 
         for i in range(int(offset)):
             
-            self.new_alphabet.append(self.new_alphabet.pop(0))
+            self.new_alphabet.insert(0, self.new_alphabet.pop(-1))
             
         return offset
     
