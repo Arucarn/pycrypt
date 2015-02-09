@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+
 import pycrypt
 
 enc_method = int(input("For Caesar enter 1. For Ncaesar enter 2.\n> "))
@@ -20,10 +22,16 @@ def main(enc_method, option):
     if option == 1:
         
         text = input("Text to encrypt.\n> ")
-        key = input("Key.\n> ")
-        output = crypto.encrypt(text, key)
+               
+        if enc_method == 1:
+            key = input("Key.\n> ")
+            output = crypto.encrypt(text, key)
+        elif enc_method == 2:
+            output = crypto.encrypt(text)
+     
         
         print("Encrypted text:\n%s" % output[0])
+        print("Key: \n%s" % output[1])
 
     elif option == 2:
         text = input("Text to decrypt\n> ")
@@ -39,7 +47,6 @@ def main(enc_method, option):
                     break
                 else:
                     key.append(inpt)
-                
         else:
             print("I'm too lazy to tell you why this quit. Work it out.")
         output = crypto.decrypt(text, key)

@@ -91,7 +91,7 @@ class Ncaesar(object):
             self.new_alphabet.insert(0, self.new_alphabet.pop(-1))
             
         return offset
-    
+                
     def encrypt(self, text):
         
         """Does exactly the same as the Ceaser method but uses a

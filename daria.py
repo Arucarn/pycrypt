@@ -8,7 +8,8 @@ while q== "no":
 
     if a=="e":
         b= input("Please enter text: ")
-        c= crypto.encrypt(b)
+        key = input("Please enter key: ")
+        c= crypto.encrypt(b, key)
         print("Your encrypted text:", c)
     elif a=="d":
         b= input("Please enter encrypted text: ")
