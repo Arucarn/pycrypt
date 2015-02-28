@@ -1,4 +1,4 @@
-#! /usr/bin/env python3
+#!/usr/bin/env python3
 
 from random import randint
 
@@ -16,20 +16,15 @@ class Caesar(object):
             'w', 'x', 'y', 'z'
             ]
 
-        self.new_alphabet = [
-            'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
-            'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
-            'w', 'x', 'y', 'z'
-            ]
+        self.new_alphabet = self.alphabet[:]
 
         for i in range(26 - int(offset)):
             
             # Takes first index and appends it to the end.
-            
             self.new_alphabet.insert(0, self.new_alphabet.pop(-1))
-   
         return offset
     
+
     def encrypt(self, text, key):
         
         """The function takes an input then
@@ -41,9 +36,8 @@ class Caesar(object):
         encrypted_text = []
         
         for c in text:
-            
             # Takes letter input then appends the output to a list.
-            
+            print(self.new_alphabet[self.alphabet.index(c)])
             encrypted_text.append(self.new_alphabet[self.alphabet.index(c)])
         
         return "".join(encrypted_text), key # Returns the encrypted text and the key.
