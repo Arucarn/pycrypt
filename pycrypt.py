@@ -16,7 +16,7 @@ class Caesar(object):
             'w', 'x', 'y', 'z'
             ]
 
-        self.new_alphabet = self.alphabet[:]
+        self.new_alphabet = list(self.alphabet)
 
         for i in range(26 - int(offset)):
             
