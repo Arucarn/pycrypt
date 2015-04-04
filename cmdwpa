@@ -1,1 +1,0 @@
-sudo wpa_supplicant -Bw -Dwext -i eth0 -c/etc/wpa_supplicant.conf
